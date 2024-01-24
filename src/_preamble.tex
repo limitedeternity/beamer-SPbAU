@@ -1,0 +1,97 @@
+\PassOptionsToPackage{russian,pagebackref}{hyperref}
+\documentclass{beamer}
+
+\usetheme{SPbAU}
+
+\usepackage{xltxtra}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fontspec}
+
+\defaultfontfeatures{Ligatures=TeX,Mapping=tex-text}
+
+\setmainfont{DejaVuSerif}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]
+\newfontfamily\cyrillicfont[Script=Cyrillic]{DejaVuSerif}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold,
+    BoldItalicFont = *-BoldItalic
+]
+
+\setsansfont{DejaVuSans}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold
+]
+\newfontfamily\cyrillicfontsf[Script=Cyrillic]{DejaVuSans}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold
+]
+
+\setmonofont{DejaVuSansMono}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold
+]
+\newfontfamily\cyrillicfonttt[Script=Cyrillic]{DejaVuSansMono}[
+    Extension = .ttf,
+    Path = fonts/,
+    UprightFont    = *-Regular,
+    BoldFont       = *-Bold
+]
+
+\usepackage{unicode-math}
+\setmathfont{LatinModernMath}[
+    Path = fonts/,
+    Extension = .otf
+]
+
+\usepackage{polyglossia}
+\setmainlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+\setkeys{russian}{babelshorthands=true}
+
+\usepackage{hyperref}
+\usepackage{listingsutf8}
+
+\lstdefinestyle{mycode}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    xleftmargin=\parindent,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries,
+    commentstyle=\itshape\color{gray!40!black},
+    stringstyle=\color{red},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+}
+\lstset{escapechar=@,style=mycode}
+
+\usepackage{csquotes}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{img/}}
+
+\newcommand\heading[1]{%
+  \par\bigskip
+  {\Large\bfseries#1}\par\smallskip}
+
+\begin{document}
+    \input{titlepage.tex}
+    \input{index.tex}
+\end{document}
